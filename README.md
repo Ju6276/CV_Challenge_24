@@ -20,7 +20,7 @@ tbd
 [Tour Into the Picture:Using a Spidery Mesh Interface to Make Animation from a Single Image](http://graphics.cs.cmu.edu/courses/15-463/2011_fall/Papers/TIP.pdf)
 
 ## 一些资料
-1. [示例]](https://github.com/yli262/tour-into-the-picture).
+1. [示例](https://github.com/yli262/tour-into-the-picture).
 2. [Youtube实现视频](https://www.youtube.com/watch?v=44V9I7Nrjw4)
 3. [Youtube实现视频](https://www.youtube.com/watch?v=0lyFixtyvbs&t=8s])
 4. ...
