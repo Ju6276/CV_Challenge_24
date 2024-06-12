@@ -17,6 +17,7 @@ tbd
 
 ## 原文链接
 > [!TIP]
+> **Computer Vision Challenge - SoSe 2024** (https://www.moodle.tum.de/pluginfile.php/5168450/mod_resource/content/1/Computer_Vision_Challenge_2024.pdf)
 [Tour Into the Picture:Using a Spidery Mesh Interface to Make Animation from a Single Image](http://graphics.cs.cmu.edu/courses/15-463/2011_fall/Papers/TIP.pdf)
 
 ## 一些资料
