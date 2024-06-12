@@ -28,9 +28,9 @@ tbd
 5. [Github readme编辑指令](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 ## 提交内容
-- [ ] demo
+- [ ] demo[TUM模板](https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_videovorlagen)
 - [ ] code
-- [ ] poster
+- [ ] poster[TUM模板](https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_plakate)
 
 ## Idee
 
