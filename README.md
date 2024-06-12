@@ -21,10 +21,10 @@ tbd
 
 ## 一些资料
 1. [示例]](https://github.com/yli262/tour-into-the-picture).
-2. [Youtube实现视频][https://www.youtube.com/watch?v=44V9I7Nrjw4](url)
-3. [Youtube实现视频][https://www.youtube.com/watch?v=0lyFixtyvbs&t=8s](url)
+2. [Youtube实现视频](https://www.youtube.com/watch?v=44V9I7Nrjw4)
+3. [Youtube实现视频](https://www.youtube.com/watch?v=0lyFixtyvbs&t=8s])
 4. ...
-5. [Github readme编辑指令][https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax](url)
+5. [Github readme编辑指令](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 ## 提交内容
 - [ ] demo
