@@ -37,7 +37,7 @@ tbd
 Möglicher Workflow?_von Ju Dong_
 1. Ein Bild wählen
 2. Bildverarbeiten
-3. Vordergrund setzen (nicht rekonstruierbar?)
+3. Vordergrund setzen (nicht rekonstruierbar? ROI-Algorithm) 
 4. Spinnennetz-Gitters erzeugen (only 1 Vanishing point? need to be improved ->2 Vanishing Points?)
 5. 5 Zonen extrahieren 
 6. die 3D Szene erzeugen
