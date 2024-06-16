@@ -42,4 +42,6 @@ Möglicher Workflow?_von Ju Dong_
 5. 5 Zonen extrahieren 
 6. die 3D Szene erzeugen
 
+1.如果前景的图片是多边形，但是我最后只保存最左最右最上和最下的四个点。？会不会建模的时候更简单？
+
 
