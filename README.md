@@ -1,5 +1,10 @@
 # CV_Challenge_24
-
+Chen,Junpeng
+Dong,Ju
+Li,Xiaolin
+Li,Zhiyun
+Yu,Fengyi
+Zhou,Nan
 
 > [!IMPORTANT]
 > **Deadline 09.07**
@@ -10,10 +15,19 @@
 > [会议室链接] tbd
 >
 ## 时间计划
-tbd
+- 1.st week:
+- 2.end week: Foreground, spiderweb, five areas and corresponding GUIs
+- 
 
 ## 任务分配
-tbd
+1. Foreground segmentation  _Dong,Ju_
+2. Vanishing point; spider network segmentation _Chen,Junpeng/Dong,Ju/Li,Xiaolin/Zhou,Nan_
+3. Extraction of five regions _Chen,Junpeng/Li,Xiaolin/Zhou,Nan_
+4. GUI _Li,Zhiyun/Yu,Fengyi_
+5. 3D-Reconstruction
+6. Animation
+
+
 
 ## 原文链接
 > [!TIP]
