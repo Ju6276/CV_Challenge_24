@@ -38,8 +38,9 @@ Zhou,Nan
 1. [示例](https://github.com/yli262/tour-into-the-picture).
 2. [Youtube实现视频](https://www.youtube.com/watch?v=44V9I7Nrjw4)
 3. [Youtube实现视频](https://www.youtube.com/watch?v=0lyFixtyvbs&t=8s])
-4. ...
-5. [Github readme编辑指令](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+4. [某个项项目描述]https://www.cs.cmu.edu/afs/cs.cmu.edu/academic/class/15463-f08/www/proj5/www/gme/-用于写缺点或者展望
+5. ...
+6. [Github readme编辑指令](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
 
 ## 提交内容
 - [ ] demo[TUM模板](https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_videovorlagen)
