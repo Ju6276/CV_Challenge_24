@@ -46,6 +46,7 @@ Zhou,Nan
 - [ ] demo[TUM模板](https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_videovorlagen)
 - [ ] code
 - [ ] poster[TUM模板](https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_plakate)
+- [ ] Readme
 
 ## Idee
 
