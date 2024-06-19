@@ -81,7 +81,7 @@ function [xIntersect, yIntersect] = extendLineToBoundary(vp, corner, imgSize)
     xIntersect = [];
     yIntersect = [];
     
-    % 计算与左边界 (x = 1) 的交点
+    % 计算与左边界 (x = 0) 的交点
     if dx ~= 0
         tLeft = (1 - vp(1)) / dx;
         yLeft = vp(2) + tLeft * dy;
@@ -103,7 +103,7 @@ function [xIntersect, yIntersect] = extendLineToBoundary(vp, corner, imgSize)
         end
     end
 
-    % 计算与上边界 (y = 1) 的交点
+    % 计算与上边界 (y = 0) 的交点
     if dy ~= 0
         tTop = (1 - vp(2)) / dy;
         xTop = vp(1) + tTop * dx;
