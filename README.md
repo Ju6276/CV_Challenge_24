@@ -15,8 +15,8 @@ Zhou,Nan
 > [会议室链接] tbd
 >
 ## 时间计划
-- 1.st week:
-- 2.end week: Foreground, spiderweb, five areas and corresponding GUIs
+- 1.st week: Assign tasks, create repo
+- 2.end week: Foreground, spiderweb, five areas and corresponding GUIs, Poster making
 - 
 
 ## 任务分配
