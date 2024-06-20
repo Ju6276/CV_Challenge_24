@@ -1,10 +1,10 @@
 # CV_Challenge_24
-Chen,Junpeng
-Dong,Ju
-Li,Xiaolin
-Li,Zhiyun
-Yu,Fengyi
-Zhou,Nan
+-Chen,Junpeng
+-Dong,Ju
+-Li,Xiaolin
+-Li,Zhiyun
+-Yu,Fengyi
+-Zhou,Nan
 
 > [!IMPORTANT]
 > **Deadline 09.07**
