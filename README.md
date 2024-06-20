@@ -10,13 +10,18 @@ Zhou,Nan
 > **Deadline 09.07**
 > **Presentation 10.07**
 
-## 
+
+## Umwelt 
+Matlab 2004a
+Computer Version Toolbox
+Image Processing Toolbox
+
 > [!NOTE]
 > [会议室链接] tbd
 >
 ## 时间计划
 - 1.st week: Assign tasks, create repo
-- 2.end week: Foreground, spiderweb, five areas and corresponding GUIs, Poster making
+- 2.nd week: Foreground, spiderweb, five areas and corresponding GUIs, Poster making
 - 
 
 ## 任务分配
