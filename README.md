@@ -54,9 +54,8 @@ Image Processing Toolbox
 - [ ] poster[TUM模板](https://portal.mytum.de/corporatedesign/index_html/vorlagen/index_plakate)
 - [ ] Readme
 
-## Idee
-
-Möglicher Workflow?_von Ju Dong_
+## Möglicher Workflow
+_von Ju Dong_
 1. Ein Bild wählen
 2. Bildverarbeiten
 3. Vordergrund setzen (nicht rekonstruierbar? ROI-Algorithm) 
@@ -64,6 +63,7 @@ Möglicher Workflow?_von Ju Dong_
 5. 5 Zonen extrahieren 
 6. die 3D Szene erzeugen
 
+## Herausforderung/ Probleme
 1.如果前景的图片是复杂图像？ 最后只保存最左最右最上和最下的四个点？会不会建模的时候更简单？
 2.图片处理时间过长？是否可以考虑转换成灰度图？
 
