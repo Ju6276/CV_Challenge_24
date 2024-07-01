@@ -18,11 +18,11 @@ function points = Selection(picture,location)
     
     % Vanishpointdrawpoint	
     disp('Click to select the vanishing point.');
-     [a, b,~] =size(picture);
-     pos_VanishingPoint = [0.5*a, 0.5*b];
-    location.XLim = [0 b];
-    location.YLim = [0 a];
-    location.YDir = 'reverse'; % 反转Y轴，使(0,0)在左上角
+    [a, b,~] =size(picture);
+    pos_VanishingPoint = [0.5*b, 0.5*a];
+    % location.XLim = [0 b];
+    % location.YLim = [0 a];
+    % location.YDir = 'reverse'; % 反转Y轴，使(0,0)在左上角
     %vanishingPoint = pos_VanishingPoint; 
     %hold(location,"on");'Position',pos_VanishingPoint,
     vanishingPoint = drawpoint(location,'Position',pos_VanishingPoint,'Color', 'yellow','LineWidth', 4);
@@ -41,13 +41,15 @@ function points = Selection(picture,location)
 
     % Background
     disp('Now draw the rectangle.');
-    pos_InnerRectangle = [0.5 * a, 0.5 * b, 0.5 * a + 0.5 * b, 0.5 * a];
-    innerRectangle = drawrectangle(location,'Position',pos_InnerRectangle,'Color', [0.4660 0.6740 0.1880], 'LineWidth', 2);
+    pos_InnerRectangle = [0.25 * b, 0.25 * a, 0.5 * b, 0.5 * a];
+    %innerRectangle =
+    %drawrectangle(location,'Position',pos_InnerRectangle,'Color', [0.4660 0.6740 0.1880], 'LineWidth', 2);green
+    innerRectangle = drawrectangle(location,'Position',pos_InnerRectangle,'Color', [0.00,0.45,0.74], 'LineWidth', 2.5);
     innerRectangle.Label = 'Background';
     hold(location,"on");
     wait(innerRectangle);
     innerRectangle.Label = '';
-    text(location,innerRectangle.Position(1)+ 0.3*innerRectangle.Position(3), innerRectangle.Position(2)+ 0.3*innerRectangle.Position(4), 'Background', 'Color', "g", 'FontSize', 22, 'FontWeight', 'bold');
+    text(location,innerRectangle.Position(1)+ 0.3*innerRectangle.Position(3), innerRectangle.Position(2)+ 0.3*innerRectangle.Position(4), 'Background', 'Color', "b", 'FontSize', 22, 'FontWeight', 'bold');
 
     
     corners = [innerRectangle.Position(1), innerRectangle.Position(2); 
@@ -75,7 +77,7 @@ function points = Selection(picture,location)
             points(labels(i)+4, :) = [xw, yw];
             
            
-            line(location,[vanishingPoint.Position(1), xw], [vanishingPoint.Position(2), yw], 'Color', 'b', 'LineWidth', 2);
+            line(location,[vanishingPoint.Position(1), xw], [vanishingPoint.Position(2), yw], 'Color', [0.00,0.45,0.74], 'LineWidth', 2.5);
             hold(location,"on");
             %plot(location,xw, yw, 'ro'); 
             hold(location,"on");
@@ -91,7 +93,7 @@ function points = Selection(picture,location)
               
              points(labels(i)+2, :) = [xh, yh];
                 
-             line(location,[vanishingPoint.Position(1), xh], [vanishingPoint.Position(2), yh], 'Color', 'b', 'LineWidth', 2);
+             line(location,[vanishingPoint.Position(1), xh], [vanishingPoint.Position(2), yh], 'Color', [0.00,0.45,0.74], 'LineWidth', 2.5);
              hold(location,"on");
              %plot(location,xh, yh, 'bs'); 
              hold(location,"on");
@@ -100,13 +102,13 @@ function points = Selection(picture,location)
         
     end
     
-    line(location,[points(3,1), points(4,1)], [points(3,2), points(4,2)], 'Color', 'b', 'LineWidth', 2);
+    line(location,[points(3,1), points(4,1)], [points(3,2), points(4,2)], 'Color', [0.00,0.45,0.74], 'LineWidth', 2.5);
     hold(location,"on");
-    line(location,[points(9,1), points(10,1)], [points(9,2), points(10,2)], 'Color', 'b', 'LineWidth', 2);
+    line(location,[points(9,1), points(10,1)], [points(9,2), points(10,2)], 'Color', [0.00,0.45,0.74], 'LineWidth', 2.5);
     hold(location,"on");
-    line(location,[points(5,1), points(11,1)], [points(5,2), points(11,2)], 'Color', 'b', 'LineWidth', 2);
+    line(location,[points(5,1), points(11,1)], [points(5,2), points(11,2)], 'Color', [0.00,0.45,0.74], 'LineWidth', 2.5);
     hold(location,"on");
-    line(location,[points(6,1), points(12,1)], [points(6,2), points(12,2)], 'Color', 'b', 'LineWidth', 2);
+    line(location,[points(6,1), points(12,1)], [points(6,2), points(12,2)], 'Color', [0.00,0.45,0.74], 'LineWidth', 2.5);
     hold(location,"on");
 
     disp('Stored Points:');
