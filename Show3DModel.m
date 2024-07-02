@@ -15,6 +15,10 @@ function Show3DModel(Location,Target_Position,VanishingPoint_3D,Camera_Position)
     %target position
     camtarget(Location,[Target_Position(1),Target_Position(2),VanishingPoint_3D(3)]);
     drawnow;
+    Location.Position = [270 109 929 564];
+    Location.XLimMode ="auto";
+    Location.YLimMode ="auto";
+    Location.ZLimMode ="auto";
     % axis(ax,'equal');
     % axis(ax,'vis3d','off');
 end

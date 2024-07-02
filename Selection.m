@@ -15,7 +15,8 @@ function points = Selection(picture,location)
     %figure, imshow(picture), hold on;
     imshow(picture,'Parent',location);
     hold(location,"on");
-    
+    location.XLimMode ="auto";
+    location.YLimMode ="auto";
     % Vanishpointdrawpoint	
     disp('Click to select the vanishing point.');
     [a, b,~] =size(picture);
