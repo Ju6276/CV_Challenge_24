@@ -1,4 +1,4 @@
-function virtual_output = Build3DModel_new(points, img,location)
+function [virtual_output, estimatedVertex] = Build3DModel_new(points, img)
     virtual_output = 0;
 
     %% 1. General Settings for tester
@@ -85,7 +85,8 @@ function virtual_output = Build3DModel_new(points, img,location)
     %% 4. Derive the View Point in World Coordinate System
     % see lines: 69-72
     View_Point = [estimatedVertex_screen_coor(1, 1), estimatedVertex_screen_coor(2, 1), 0];
-
+    disp(' View_Point is')
+    disp( View_Point)
     %% 5. Determination of the World Coordinate of Vertices and Vanishing Point
     % In previous implementation we've set the unit length for world coordinate
     % system using the borders of image. Now we consider the situation in 3D
@@ -147,51 +148,50 @@ function virtual_output = Build3DModel_new(points, img,location)
     end
 
     %% 7. Check the 3D Model of the Scene
-    if plot_check_3D_Model==true
-        
-        % drawing lines for background
-        % rear wall
-        plot3(location,[estimatedVertex(1, 2), estimatedVertex(1, 3)], [estimatedVertex(2, 2), estimatedVertex(2, 3)], [estimatedVertex(3, 2), estimatedVertex(3, 3)], 'b')
-hold(location,"on");
-plot3(location,[estimatedVertex(1, 3), estimatedVertex(1, 9)], [estimatedVertex(2, 3), estimatedVertex(2, 9)], [estimatedVertex(3, 3), estimatedVertex(3, 9)], 'b')
-hold(location,"on");
-plot3(location,[estimatedVertex(1, 9), estimatedVertex(1, 8)], [estimatedVertex(2, 9), estimatedVertex(2, 8)], [estimatedVertex(3, 9), estimatedVertex(3, 8)], 'b')
-hold(location,"on");
-plot3(location,[estimatedVertex(1, 8), estimatedVertex(1, 2)], [estimatedVertex(2, 8), estimatedVertex(2, 2)], [estimatedVertex(3, 8), estimatedVertex(3, 2)], 'b')
-hold(location,"on");
-% floor
-plot3(location,[estimatedVertex(1, 2), estimatedVertex(1, 4)], [estimatedVertex(2, 2), estimatedVertex(2, 4)], [estimatedVertex(3, 2), estimatedVertex(3, 4)], 'b')
-plot3(location,[estimatedVertex(1, 4), estimatedVertex(1, 5)], [estimatedVertex(2, 4), estimatedVertex(2, 5)], [estimatedVertex(3, 4), estimatedVertex(3, 5)], 'b')
-plot3(location,[estimatedVertex(1, 5), estimatedVertex(1, 3)], [estimatedVertex(2, 5), estimatedVertex(2, 3)], [estimatedVertex(3, 5), estimatedVertex(3, 3)], 'b')
-% left wall
-plot3(location,[estimatedVertex(1, 8), estimatedVertex(1, 12)], [estimatedVertex(2, 8), estimatedVertex(2, 12)], [estimatedVertex(3, 8), estimatedVertex(3, 12)], 'b')
-plot3(location,[estimatedVertex(1, 6), estimatedVertex(1, 12)], [estimatedVertex(2, 6), estimatedVertex(2, 12)], [estimatedVertex(3, 6), estimatedVertex(3, 12)], 'b')
-plot3(location,[estimatedVertex(1, 6), estimatedVertex(1, 2)], [estimatedVertex(2, 6), estimatedVertex(2, 2)], [estimatedVertex(3, 6), estimatedVertex(3, 2)], 'b')
-% right wall
-plot3(location,[estimatedVertex(1, 13), estimatedVertex(1, 9)], [estimatedVertex(2, 13), estimatedVertex(2, 9)], [estimatedVertex(3, 13), estimatedVertex(3, 9)], 'b')
-plot3(location,[estimatedVertex(1, 13), estimatedVertex(1, 7)], [estimatedVertex(2, 13), estimatedVertex(2, 7)], [estimatedVertex(3, 13), estimatedVertex(3, 7)], 'b')
-plot3(location,[estimatedVertex(1, 7), estimatedVertex(1, 3)], [estimatedVertex(2, 7), estimatedVertex(2, 3)], [estimatedVertex(3, 7), estimatedVertex(3, 3)], 'b')
-% ceiling
-plot3(location,[estimatedVertex(1, 8), estimatedVertex(1, 10)], [estimatedVertex(2, 8), estimatedVertex(2, 10)], [estimatedVertex(3, 8), estimatedVertex(3, 10)], 'b')
-plot3(location,[estimatedVertex(1, 10), estimatedVertex(1, 11)], [estimatedVertex(2, 10), estimatedVertex(2, 11)], [estimatedVertex(3, 10), estimatedVertex(3, 11)], 'b')
-plot3(location,[estimatedVertex(1, 11), estimatedVertex(1, 9)], [estimatedVertex(2, 11), estimatedVertex(2, 9)], [estimatedVertex(3, 11), estimatedVertex(3, 9)], 'b')
-if given_foreobj==true
-plot3(location,[foreobj_3D(1, 4), foreobj_3D(1, 3)], [foreobj_3D(2, 4), foreobj_3D(2, 3)], [foreobj_3D(3, 4), foreobj_3D(3, 3)], 'r')
-plot3(location,[foreobj_3D(1, 3), foreobj_3D(1, 2)], [foreobj_3D(2, 3), foreobj_3D(2, 2)], [foreobj_3D(3, 3), foreobj_3D(3, 2)], 'r')
-plot3(location,[foreobj_3D(1, 2), foreobj_3D(1, 1)], [foreobj_3D(2, 2), foreobj_3D(2, 1)], [foreobj_3D(3, 2), foreobj_3D(3, 1)], 'r')
-plot3(location,[foreobj_3D(1, 1), foreobj_3D(1, 4)], [foreobj_3D(2, 1), foreobj_3D(2, 4)], [foreobj_3D(3, 1), foreobj_3D(3, 4)], 'r')
-end
-% Adding highlights and numbers for the Vertices
-scatter3(location,estimatedVertex(1, 1:13), estimatedVertex(2, 1:13), estimatedVertex(3, 1:13), 'g')
-for i = 1:13
-num = num2str(i - 1);
-text(location,estimatedVertex(1, i), estimatedVertex(2, i), estimatedVertex(3, i), num, 'color', 'red')
-end
-%%zticks(-3.5:0.1:-1)
-% Drawing lines for foreobject (to be implemented)
-
-
-    end
+%     if plot_check_3D_Model==true
+%         figure
+%         % drawing lines for background
+%         % rear wall
+%         plot3([estimatedVertex(1, 2), estimatedVertex(1, 3)], [estimatedVertex(2, 2), estimatedVertex(2, 3)], [estimatedVertex(3, 2), estimatedVertex(3, 3)], 'b')
+% hold on
+% plot3([estimatedVertex(1, 3), estimatedVertex(1, 9)], [estimatedVertex(2, 3), estimatedVertex(2, 9)], [estimatedVertex(3, 3), estimatedVertex(3, 9)], 'b')
+% plot3([estimatedVertex(1, 9), estimatedVertex(1, 8)], [estimatedVertex(2, 9), estimatedVertex(2, 8)], [estimatedVertex(3, 9), estimatedVertex(3, 8)], 'b')
+% plot3([estimatedVertex(1, 8), estimatedVertex(1, 2)], [estimatedVertex(2, 8), estimatedVertex(2, 2)], [estimatedVertex(3, 8), estimatedVertex(3, 2)], 'b')
+% % floor
+% plot3([estimatedVertex(1, 2), estimatedVertex(1, 4)], [estimatedVertex(2, 2), estimatedVertex(2, 4)], [estimatedVertex(3, 2), estimatedVertex(3, 4)], 'b')
+% plot3([estimatedVertex(1, 4), estimatedVertex(1, 5)], [estimatedVertex(2, 4), estimatedVertex(2, 5)], [estimatedVertex(3, 4), estimatedVertex(3, 5)], 'b')
+% plot3([estimatedVertex(1, 5), estimatedVertex(1, 3)], [estimatedVertex(2, 5), estimatedVertex(2, 3)], [estimatedVertex(3, 5), estimatedVertex(3, 3)], 'b')
+% % left wall
+% plot3([estimatedVertex(1, 8), estimatedVertex(1, 12)], [estimatedVertex(2, 8), estimatedVertex(2, 12)], [estimatedVertex(3, 8), estimatedVertex(3, 12)], 'b')
+% plot3([estimatedVertex(1, 6), estimatedVertex(1, 12)], [estimatedVertex(2, 6), estimatedVertex(2, 12)], [estimatedVertex(3, 6), estimatedVertex(3, 12)], 'b')
+% plot3([estimatedVertex(1, 6), estimatedVertex(1, 2)], [estimatedVertex(2, 6), estimatedVertex(2, 2)], [estimatedVertex(3, 6), estimatedVertex(3, 2)], 'b')
+% % right wall
+% plot3([estimatedVertex(1, 13), estimatedVertex(1, 9)], [estimatedVertex(2, 13), estimatedVertex(2, 9)], [estimatedVertex(3, 13), estimatedVertex(3, 9)], 'b')
+% plot3([estimatedVertex(1, 13), estimatedVertex(1, 7)], [estimatedVertex(2, 13), estimatedVertex(2, 7)], [estimatedVertex(3, 13), estimatedVertex(3, 7)], 'b')
+% plot3([estimatedVertex(1, 7), estimatedVertex(1, 3)], [estimatedVertex(2, 7), estimatedVertex(2, 3)], [estimatedVertex(3, 7), estimatedVertex(3, 3)], 'b')
+% % ceiling
+% plot3([estimatedVertex(1, 8), estimatedVertex(1, 10)], [estimatedVertex(2, 8), estimatedVertex(2, 10)], [estimatedVertex(3, 8), estimatedVertex(3, 10)], 'b')
+% plot3([estimatedVertex(1, 10), estimatedVertex(1, 11)], [estimatedVertex(2, 10), estimatedVertex(2, 11)], [estimatedVertex(3, 10), estimatedVertex(3, 11)], 'b')
+% plot3([estimatedVertex(1, 11), estimatedVertex(1, 9)], [estimatedVertex(2, 11), estimatedVertex(2, 9)], [estimatedVertex(3, 11), estimatedVertex(3, 9)], 'b')
+% if given_foreobj==true
+% plot3([foreobj_3D(1, 4), foreobj_3D(1, 3)], [foreobj_3D(2, 4), foreobj_3D(2, 3)], [foreobj_3D(3, 4), foreobj_3D(3, 3)], 'r')
+% plot3([foreobj_3D(1, 3), foreobj_3D(1, 2)], [foreobj_3D(2, 3), foreobj_3D(2, 2)], [foreobj_3D(3, 3), foreobj_3D(3, 2)], 'r')
+% plot3([foreobj_3D(1, 2), foreobj_3D(1, 1)], [foreobj_3D(2, 2), foreobj_3D(2, 1)], [foreobj_3D(3, 2), foreobj_3D(3, 1)], 'r')
+% plot3([foreobj_3D(1, 1), foreobj_3D(1, 4)], [foreobj_3D(2, 1), foreobj_3D(2, 4)], [foreobj_3D(3, 1), foreobj_3D(3, 4)], 'r')
+% end
+% % Adding highlights and numbers for the Vertices
+% scatter3(estimatedVertex(1, 1:13), estimatedVertex(2, 1:13), estimatedVertex(3, 1:13), 'g')
+% for i = 1:13
+% num = num2str(i - 1);
+% text(estimatedVertex(1, i), estimatedVertex(2, i), estimatedVertex(3, i), num, 'color', 'red')
+% end
+% %%zticks(-3.5:0.1:-1)
+% % Drawing lines for foreobject (to be implemented)
+% xlabel('x')
+% ylabel('y')
+% zlabel('z')
+% hold off
+%     end
 
    %% 8. Output Required Variables
 % Following variables are required by Transformation part.
